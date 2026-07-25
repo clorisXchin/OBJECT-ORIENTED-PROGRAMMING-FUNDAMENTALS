@@ -13,11 +13,11 @@ public class User {
 
 	public User(String name, int age, String email, String password, String phone_number) {
 		super();
-		this.name = name;
-		this.age = age;
-		this.email = email;
-		this.password = password;
-		this.phone_number = phone_number;
+		setName(name);
+		setAge(age);
+		setEmail(email);
+		setPassword(password);
+		setPhone_number(phone_number);
 	}
 
 	public String getName() {
