@@ -1,4 +1,3 @@
-
 public class User {
 	
 	private String name;
@@ -18,6 +17,7 @@ public class User {
 		setEmail(email);
 		setPassword(password);
 		setPhone_number(phone_number);
+
 	}
 
 	public String getName() {
@@ -77,6 +77,20 @@ public class User {
 			throw new IllegalArgumentException("Phone numbers can only contain digits.");
 	}
 
+	public void displayMenu() {
+		System.out.println("\n==============================");
+	        System.out.println("   CINEMA TICKETING SYSTEM");
+	        System.out.println("==============================");
+	        System.out.println("1. View Movies");
+	        System.out.println("2. Book Ticket");
+	        System.out.println("3. Cancel Booking");
+	        System.out.println("4. View Booking");
+	        System.out.println("5. Exit");
+	        System.out.println("==============================");
+	        System.out.print("Enter your choice: ");
+		
+	}
+	
 	@Override
 	public String toString() {
 		return "User [name: " + name + ", age: " + age + ", email: " + email + ", password: " + password + ", phone_number: "
@@ -85,4 +99,3 @@ public class User {
 	
 	
 }
-
