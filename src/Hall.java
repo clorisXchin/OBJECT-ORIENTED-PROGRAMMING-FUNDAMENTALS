@@ -38,7 +38,7 @@ public class Hall {
                 return seats[rowIndex][colIndex];
             }
         } catch (NumberFormatException e) {
-            System.out.println("Invalid seat format.");
+            return null; // Invalid column number format
         }
         return null;
     }
@@ -56,22 +56,8 @@ public class Hall {
         System.out.println("-------------------------");
     }
 
-    // Controller interaction: attempts to book through the Hall facade
-    public boolean bookSeat(String seatId) {
-        Seat targetSeat = getSeat(seatId);
-        if (targetSeat != null) {
-            boolean success = targetSeat.bookSeat();
-            if (success) {
-                System.out.println("Success: " + seatId + " has been booked.");
-                return true;
-            } else {
-                System.out.println("Error: " + seatId + " is already occupied.");
-                return false;
-            }
-        }
-        System.out.println("Error: " + seatId + " does not exist in this hall.");
-        return false;
-    }
+    // Controller interaction: attempts to book through the Hall 
+
     public String getHallId() {
         return hallId;
     }

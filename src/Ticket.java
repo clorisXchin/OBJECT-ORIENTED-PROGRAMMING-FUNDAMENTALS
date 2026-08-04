@@ -1,22 +1,19 @@
 //Ticket is the general superclass for all ticket types.
+
 public class Ticket {
+
     private String ticketId;
     private Seat seat;
     private double basePrice;
-    
+
     public Ticket(String ticketId, Seat seat, double basePrice) {
         this.ticketId = ticketId;
         this.seat = seat;
         setBasePrice(basePrice);
     }
-    public void setTicketId(String ticketId) {
-        this.ticketId = ticketId;
-    }
+
     public String getTicketId() {
         return ticketId;
-    }
-     public void setSeat(Seat seat) {
-        this.seat = seat;
     }
 
     public Seat getSeat() {
@@ -37,6 +34,7 @@ public class Ticket {
     public double calculatePrice() {
         return getBasePrice();
     }
+
     public String getTicketType() {
         return "General";
     }

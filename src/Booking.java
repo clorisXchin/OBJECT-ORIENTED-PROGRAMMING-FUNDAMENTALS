@@ -1,8 +1,7 @@
-/*
- * Booking applies the seat and payment rules for one customer ticket.
- * It contains a Ticket reference, so the price is calculated polymorphically.
- */
+//Calculates the ticket price using polymorphic ticket rules
+// and applies seat and payment logic."
 public class Booking {
+
     private static final double BOOKING_FEE = 1.50;
     private static final String PENDING = "PENDING";
     private static final String CONFIRMED = "CONFIRMED";
@@ -26,22 +25,6 @@ public class Booking {
         return bookingId;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public Showtime getShowtime() {
-        return showtime;
-    }
-
-    public Ticket getTicket() {
-        return ticket;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
     public boolean confirmBooking() {
         if (status.equals(PENDING) && ticket.getSeat().bookSeat()) {
             status = CONFIRMED;
@@ -59,13 +42,7 @@ public class Booking {
         return getTicketPrice() + BOOKING_FEE;
     }
 
-    public double getBookingFee() {
-        return BOOKING_FEE;
-    }
-    /*
-     * Rule: only a confirmed booking can be cancelled.
-     * A successful cancellation also releases the seat for another customer.
-     */
+    //Cancel the booking and free the seat
     public boolean cancelBooking() {
         if (status.equals(CONFIRMED)) {
             ticket.getSeat().freeSeat();
@@ -75,7 +52,7 @@ public class Booking {
         return false;
     }
 
-    // Prints the important details and the complete price calculation.
+    // Prints receipt
     public void displayReceipt() {
         System.out.println("\n----------------------------------------");
         System.out.println("Booking ID : " + bookingId);
@@ -84,6 +61,7 @@ public class Booking {
         System.out.println("Showtime   : " + showtime.getShowDate() + " " + showtime.getTime());
         System.out.println("Hall/Seat  : " + showtime.getHall().getHallId()
                 + " / " + ticket.getSeat().getSeatId());
+        System.out.println("Ticket ID  : " + ticket.getTicketId());
         System.out.println("Ticket     : " + ticket.getTicketType());
         System.out.println("Ticket fee : RM" + String.format("%.2f", getTicketPrice()));
         System.out.println("Booking fee: RM" + String.format("%.2f", BOOKING_FEE));

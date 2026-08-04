@@ -1,4 +1,6 @@
+
 public class Seat {
+
     private char row;
     private int column;
     private boolean isBooked;
@@ -10,7 +12,7 @@ public class Seat {
         this.isBooked = false; // By default, a real-world seat starts empty
     }
 
-    // Logic: Combines char and int to create standard ID (e.g., "A1", "B4")
+    // Return ID like "A1" or "B3" for user-friendly display
     public String getSeatId() {
         return String.valueOf(row) + column;
     }
@@ -19,7 +21,7 @@ public class Seat {
         return isBooked;
     }
 
-    // Logic: Returns true if successful, false if it was already taken
+    // If successful, returns true if not returns false
     public boolean bookSeat() {
         if (!isBooked) {
             isBooked = true;
@@ -28,7 +30,7 @@ public class Seat {
         return false;
     }
 
-    // Allows for cancellations/refunds
+    // Show that the seat is now available again
     public void freeSeat() {
         this.isBooked = false;
     }

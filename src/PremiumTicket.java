@@ -1,4 +1,4 @@
-/* PremiumTicket adds a 50% surcharge for the premium ticket package. */
+//Add 50%for premium ticket
 public class PremiumTicket extends Ticket {
     private static final double PREMIUM_RATE = 0.50;
     public PremiumTicket(String ticketId, Seat seat, double basePrice) {

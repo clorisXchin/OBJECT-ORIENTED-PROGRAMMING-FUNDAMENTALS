@@ -1,5 +1,7 @@
-/* StudentTicket applies a 20% discount when a valid student ID is provided. */
+// StudentTicket applies a 20% discount 
+
 public class StudentTicket extends Ticket {
+
     private static final double DISCOUNT_RATE = 0.20;
     private String studentId;
 
@@ -8,18 +10,19 @@ public class StudentTicket extends Ticket {
 
         if (!InputValidator.isValidStudentId(studentId)) {
             throw new IllegalArgumentException("Student ID must contain 4 to 20 letters or digits.");
-        }  
+        }
         this.studentId = studentId;
     }
 
     public String getStudentId() {
         return studentId;
     }
+
     @Override
     public double calculatePrice() {
         return getBasePrice() * (1 - DISCOUNT_RATE);
     }
-    
+
     @Override
     public String getTicketType() {
         return "Student";
