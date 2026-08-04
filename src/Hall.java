@@ -72,4 +72,7 @@ public class Hall {
         System.out.println("Error: " + seatId + " does not exist in this hall.");
         return false;
     }
+    public String getHallId() {
+        return hallId;
+    }
 }
