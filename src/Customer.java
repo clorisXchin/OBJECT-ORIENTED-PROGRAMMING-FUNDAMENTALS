@@ -30,6 +30,14 @@ public class Customer extends User {
 		}
 	}
 	
+	public Booking findBookingById(String bookingId) {
+    	for (Booking booking : bookingHistory) {
+        	if (booking.getBookingId().equalsIgnoreCase(bookingId)) {
+            	return booking;
+        	}
+    }
+   		 return null;
+	}
 	@Override
 	public void displayMenu() {
 	        System.out.println("\n==============================");
