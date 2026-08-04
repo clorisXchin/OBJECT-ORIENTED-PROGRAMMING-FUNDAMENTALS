@@ -288,16 +288,25 @@ private String readValidEmail() {
     System.out.print("Enter seat ID, for example A1: ");
     String seatId = scanner.nextLine().trim().toUpperCase();
 
-    Seat selectedSeat = selectedHall.getSeat(seatId);
+    Seat selectedSeat = null;
+    
+    while (true) {
+	    System.out.print("Enter seat ID, for example A1: ");
+	    String seatId = scanner.nextLine().trim().toUpperCase();
+	
+	    selectedSeat = selectedHall.getSeat(seatId);
 
     if (selectedSeat == null) {
-        System.out.println("Invalid seat ID.");
-        return;
+        System.out.println("Invalid seat ID. Please try again.");
+        continue; //ask for seat ID again
     }
 
     if (selectedSeat.isBooked()) {
-        System.out.println("That seat is already booked.");
-        return;
+        System.out.println("That seat is already booked.Please choose another seat.");
+        continue; //ask for seat ID again
+    }
+    
+    break; 
     }
 
     System.out.println("\nChoose ticket type:");
