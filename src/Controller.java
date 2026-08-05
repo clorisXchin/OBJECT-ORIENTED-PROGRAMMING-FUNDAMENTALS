@@ -95,7 +95,7 @@ public class Controller {
             try {
                 return Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.print("Please enter a number: ");
+                System.out.print("Please enter number only: ");
             }
         }
     }
@@ -148,7 +148,7 @@ public class Controller {
                 return email;
             }
 
-            System.out.println("Invalid email format.");
+            System.out.println("Invalid email format.Please include '@' and a valid domain.");
         }
     }
 
@@ -162,7 +162,7 @@ public class Controller {
             System.out.println("1. View Movies");
             System.out.println("2. Book Ticket");
             System.out.println("3. Cancel Booking");
-            System.out.println("4. View BookingHistory");
+            System.out.println("4. View Booking History");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
 
@@ -187,7 +187,10 @@ public class Controller {
                     break;
 
                 case 5:
-                    System.out.println("Thank you for using the system.");
+                    System.out.println("\n=================================");
+                    System.out.println("You have successfully exited the system.");
+                    System.out.println("Thank you for using the Movie Ticketing System!");
+                    System.out.println("=================================");
                     break;
 
                 default:
@@ -228,7 +231,6 @@ public class Controller {
             System.out.println("Date: " + showtime.getShowDate());
             System.out.println("Time: " + showtime.getTime());
             System.out.println("Hall: " + showtime.getHall().getHallId());
-            System.out.println("Price: RM" + showtime.getBasePrice());
             System.out.println("Price: RM" + String.format("%.2f", showtime.getBasePrice()));
         }
 
@@ -265,14 +267,12 @@ public class Controller {
         Hall selectedHall = selectedShowtime.getHall();
 
         selectedHall.displaySeatPlan();
-
-        System.out.print("Enter seat ID, for example A1: ");
-        String seatId = scanner.nextLine().trim().toUpperCase();
-
         Seat selectedSeat = null;
 
         while (true) {
             System.out.print("Enter seat ID, for example A1: ");
+            String seatId = scanner.nextLine().trim().toUpperCase();
+            
             selectedSeat = selectedHall.getSeat(seatId);
 
             if (selectedSeat == null) {
@@ -377,3 +377,4 @@ public class Controller {
         currentCustomer.viewHistory();
     }
 }
+
