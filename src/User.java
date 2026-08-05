@@ -47,7 +47,7 @@ public class User {
         if (InputValidator.isValidEmail(email)) {
             this.email = email; 
         }else {
-            throw new IllegalArgumentException("Invalid email format.");
+            throw new IllegalArgumentException("Invalid email format.Please include '@' and a valid domain.");
         }
     }
 
