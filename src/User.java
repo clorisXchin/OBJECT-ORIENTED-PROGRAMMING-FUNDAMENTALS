@@ -3,13 +3,11 @@ public class User {
 
     private String name;
     private int age;
-    private String email;
     private String phonenumber;
 
-    public User(String name, int age, String email, String phonenumber) {
+    public User(String name, int age, String phonenumber) {
         setName(name);
         setAge(age);
-        setEmail(email);
         setPhonenumber(phonenumber);
 
     }
@@ -39,17 +37,6 @@ public class User {
 
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        if (InputValidator.isValidEmail(email)) {
-            this.email = email; 
-        }else {
-            throw new IllegalArgumentException("Invalid email format.");
-        }
-    }
 
     public String getPhonenumber() {
         return phonenumber;
@@ -65,7 +52,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [name: " + name + ", age: " + age + ", email: " + email + ", phone_number: "
+        return "User [name: " + name + ", age: " + age + ", phone_number: "
                 + phonenumber + "]";
     }
 
