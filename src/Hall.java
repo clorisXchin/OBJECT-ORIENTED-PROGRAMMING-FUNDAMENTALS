@@ -45,7 +45,8 @@ public class Hall {
 
     // Real-world application: Visualizes the room for the user to make a choice
     public void displaySeatPlan() {
-        System.out.println("--- Screen for Hall " + hallId + " ---");
+        System.out.println("\n----- Seat Layout " + hallId + " -----");
+        System.out.println("\n[O] Available    [X] Booked\n");
         for (int i = 0; i < totalRows; i++) {
             for (int j = 0; j < totalColumns; j++) {
                 String status = seats[i][j].isBooked() ? "[X]" : "[O]";
@@ -53,7 +54,7 @@ public class Hall {
             }
             System.out.println();
         }
-        System.out.println("-------------------------");
+        System.out.println("-----------------------------");
     }
 
     // Controller interaction: attempts to book through the Hall 

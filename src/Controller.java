@@ -132,7 +132,9 @@ public class Controller {
 
     private String readValidName() {
         while (true) {
-            System.out.print("Enter name: ");
+      
+        	System.out.print("\n===== User Registration =====");
+            System.out.print("\nEnter your name: ");
             String name = scanner.nextLine();
 
             if (InputValidator.isValidName(name)) {
@@ -157,7 +159,7 @@ public class Controller {
 
     private int readValidAge() {
         while (true) {
-            System.out.print("Enter age: ");
+            System.out.print("Enter your age: ");
             int age = readInteger();
 
             if (InputValidator.isValidAge(age)) {
@@ -176,12 +178,12 @@ public class Controller {
         String phonenumber = readValidPhoneNumber();
 
         currentCustomer = new Customer(name, age, phonenumber);
-         System.out.println("Registration successful!");
+         System.out.println("\nRegistration successful!");
     }
 
     private String readValidPhoneNumber() {
         while (true) {
-            System.out.print("Enter phone number: ");
+            System.out.print("Enter your phone number: ");
             String phoneNumber = scanner.nextLine();
 
             if (InputValidator.isValidPhoneNumber(phoneNumber)) {
@@ -201,7 +203,7 @@ public class Controller {
         do {
 
             System.out.println("\n===== Movie Ticketing System =====");
-            System.out.println("1. View Movies");
+            System.out.println("1. View Movies and Showtimes");
             System.out.println("2. Book Ticket");
             System.out.println("3. Cancel Booking");
             System.out.println("4. View Booking History");
@@ -297,7 +299,7 @@ public class Controller {
                     + " | RM" + String.format("%.2f", showtime.getBasePrice()));
         }
 
-        System.out.print("Choose showtime number: ");
+        System.out.print("Select a showtime: ");
         int showtimeChoice = readInteger();
 
         if (showtimeChoice < 1 || showtimeChoice > showtimes.size()) {
@@ -312,7 +314,7 @@ public class Controller {
         Seat selectedSeat = null;
 
         while (true) {
-            System.out.print("Enter seat ID, for example A1: ");
+            System.out.print("Enter a seat ID (e.g., A1): ");
             String seatId = scanner.nextLine().trim().toUpperCase();
             
             selectedSeat = selectedHall.getSeat(seatId);
@@ -323,17 +325,17 @@ public class Controller {
             }
 
             if (selectedSeat.isBooked()) {
-                System.out.println("That seat is already booked.Please choose another seat.");
+                System.out.println("That seat is already booked.Please select another seat.");
                 continue; //ask for seat ID again
             }
             break;
         }
 
-        System.out.println("\nChoose ticket type:");
+        System.out.println("\nSelect a ticket type:");
         System.out.println("1. Standard");
         System.out.println("2. Premium");
         System.out.println("3. Student");
-        System.out.print("Enter your choice: ");
+        System.out.print("Select an option: ");
 
         int ticketChoice = readInteger();
 
@@ -379,7 +381,7 @@ public class Controller {
 
     private String readValidStudentId() {
         while (true) {
-            System.out.print("Enter student ID: ");
+            System.out.print("Enter your student ID: ");
             String studentId = scanner.nextLine();
 
             if (InputValidator.isValidStudentId(studentId)) {
