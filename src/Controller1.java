@@ -118,10 +118,9 @@ public class Controller {
 
         String name = readValidName();
         int age = readValidAge();
-        String email = readValidEmail();
         String phonenumber = readValidPhoneNumber();
 
-        currentCustomer = new Customer(name, age, email, phonenumber);
+        currentCustomer = new Customer(name, age, phonenumber);
          System.out.println("Registration successful!");
     }
 
@@ -139,18 +138,7 @@ public class Controller {
         }
     }
 
-    private String readValidEmail() {
-        while (true) {
-            System.out.print("Enter email: ");
-            String email = scanner.nextLine();
 
-            if (InputValidator.isValidEmail(email)) {
-                return email;
-            }
-
-            System.out.println("Invalid email format.Please include '@' and a valid domain.");
-        }
-    }
 
     public void start() {
         registerCustomer();

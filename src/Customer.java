@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Customer extends User {
     private ArrayList<Booking> bookingHistory;
 
-    public Customer(String name, int age, String email, String phonenumber) {
-        super(name, age, email, phonenumber);
+    public Customer(String name, int age, String phonenumber) {
+        super(name, age, phonenumber);
         this.bookingHistory = new ArrayList<>();
     }
 
