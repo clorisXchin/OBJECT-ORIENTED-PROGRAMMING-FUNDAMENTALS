@@ -37,9 +37,34 @@ public class Controller {
                 
                 112
         );
+        
+        Movie movie3 = new Movie(
+                "Spider-Man: Brand New Day",
+                "Animation",
+                "English",
+                145
+        );
+
+        Movie movie4 = new Movie(
+                "Train to Busan",
+                "Horror",
+                "Korean",
+                118
+        );
+
+        Movie movie5 = new Movie(
+                "Kung Fu Panda 4",
+                "Animation",
+                "English",
+                94
+        );
 
         movies.add(movie1);
         movies.add(movie2);
+        movies.add(movie3);
+        movies.add(movie4);
+        movies.add(movie5);
+        
 
         Hall hall1 = new Hall(
                 "H001",
@@ -70,9 +95,39 @@ public class Controller {
                 hall2,
                 20.00
         );
+        
+        Showtime showtime3 = new Showtime(
+                "S003",
+                LocalDate.of(2026, 8, 11),
+                "11:00 AM",
+                movie3,
+                hall1,
+                15.00
+        );
+
+        Showtime showtime4 = new Showtime(
+                "S004",
+                LocalDate.of(2026, 8, 11),
+                "4:00 PM",
+                movie4,
+                hall2,
+                20.00
+        );
+
+        Showtime showtime5 = new Showtime(
+                "S005",
+                LocalDate.of(2026, 8, 11),
+                "7:30 PM",
+                movie5,
+                hall1,
+                18.00
+        );
 
         showtimes.add(showtime1);
         showtimes.add(showtime2);
+        showtimes.add(showtime3);
+        showtimes.add(showtime4);
+        showtimes.add(showtime5);
     }
 
     private String readValidName() {
@@ -118,10 +173,9 @@ public class Controller {
 
         String name = readValidName();
         int age = readValidAge();
-        String email = readValidEmail();
         String phonenumber = readValidPhoneNumber();
 
-        currentCustomer = new Customer(name, age, email, phonenumber);
+        currentCustomer = new Customer(name, age, phonenumber);
          System.out.println("Registration successful!");
     }
 
@@ -139,18 +193,6 @@ public class Controller {
         }
     }
 
-    private String readValidEmail() {
-        while (true) {
-            System.out.print("Enter email: ");
-            String email = scanner.nextLine();
-
-            if (InputValidator.isValidEmail(email)) {
-                return email;
-            }
-
-            System.out.println("Invalid email format.Please include '@' and a valid domain.");
-        }
-    }
 
     public void start() {
         registerCustomer();
@@ -187,10 +229,10 @@ public class Controller {
                     break;
 
                 case 5:
-                    System.out.println("\n=================================");
+                    System.out.println("\n================================================");
                     System.out.println("You have successfully exited the system.");
                     System.out.println("Thank you for using the Movie Ticketing System!");
-                    System.out.println("=================================");
+                    System.out.println("================================================");
                     break;
 
                 default:

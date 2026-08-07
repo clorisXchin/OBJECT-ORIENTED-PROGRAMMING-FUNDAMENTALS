@@ -57,6 +57,7 @@ public class Booking {
         System.out.println("\n----------------------------------------");
         System.out.println("Booking ID : " + bookingId);
         System.out.println("Customer   : " + customer.getName());
+        System.out.println("Phone      : " + customer.getPhonenumber());
         System.out.println("Movie      : " + showtime.getMovie().getMovieTitle());
         System.out.println("Showtime   : " + showtime.getShowDate() + " " + showtime.getTime());
         System.out.println("Hall/Seat  : " + showtime.getHall().getHallId()

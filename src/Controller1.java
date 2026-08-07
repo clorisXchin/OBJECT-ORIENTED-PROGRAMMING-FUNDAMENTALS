@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Controller {
+public class Controller1 {
 
     private Scanner scanner;
     private ArrayList<Movie> movies;
@@ -12,7 +12,7 @@ public class Controller {
     private int nextTicketNumber = 1;
     private int nextBookingNumber = 1;
 
-    public Controller() {
+    public Controller1() {
         scanner = new Scanner(System.in);
         movies = new ArrayList<>();
         showtimes = new ArrayList<>();
@@ -37,9 +37,34 @@ public class Controller {
                 
                 112
         );
+        
+        Movie movie3 = new Movie(
+                "Spider-Man: Brand New Day",
+                "Animation",
+                "English",
+                145
+        );
+
+        Movie movie4 = new Movie(
+                "Train to Busan",
+                "Horror",
+                "Korean",
+                118
+        );
+
+        Movie movie5 = new Movie(
+                "Kung Fu Panda 4",
+                "Animation",
+                "English",
+                94
+        );
 
         movies.add(movie1);
         movies.add(movie2);
+        movies.add(movie3);
+        movies.add(movie4);
+        movies.add(movie5);
+        
 
         Hall hall1 = new Hall(
                 "H001",
@@ -70,9 +95,39 @@ public class Controller {
                 hall2,
                 20.00
         );
+        
+        Showtime showtime3 = new Showtime(
+                "S003",
+                LocalDate.of(2026, 8, 11),
+                "11:00 AM",
+                movie3,
+                hall1,
+                15.00
+        );
+
+        Showtime showtime4 = new Showtime(
+                "S004",
+                LocalDate.of(2026, 8, 11),
+                "4:00 PM",
+                movie4,
+                hall2,
+                20.00
+        );
+
+        Showtime showtime5 = new Showtime(
+                "S005",
+                LocalDate.of(2026, 8, 11),
+                "7:30 PM",
+                movie5,
+                hall1,
+                18.00
+        );
 
         showtimes.add(showtime1);
         showtimes.add(showtime2);
+        showtimes.add(showtime3);
+        showtimes.add(showtime4);
+        showtimes.add(showtime5);
     }
 
     private String readValidName() {
